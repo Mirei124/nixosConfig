@@ -45,7 +45,7 @@ in {
 
   environment.shellAliases = {
     "vi" = "nvim";
-    "nbs" = "sudo /etc/nixos/update-permission-and-format.sh; sudo nixos-rebuild switch --flake /etc/nixos";
+    "nbs" = "sudo /etc/nixos/update-permission-and-format.sh; sudo nixos-rebuild switch --flake '/etc/nixos?submodules=1'";
     "ndb" = "nix repl -f '<nixpkgs>'";
     "npk" = "sudo -E nvim /etc/nixos/system/pkgs.nix";
   };
