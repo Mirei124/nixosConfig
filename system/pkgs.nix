@@ -34,5 +34,6 @@
 
     ## python
     conda
+    jetbrains.pycharm-community-bin
   ];
 }
