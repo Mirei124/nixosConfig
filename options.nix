@@ -7,6 +7,4 @@ in {
       default = "admin";
     };
   };
-
-  options.useGUI = mkEnableOption "useGUI";
 }
