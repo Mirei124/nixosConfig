@@ -18,5 +18,9 @@
       source = ../configFiles/nvimConfig;
       recursive = true;
     };
+    "fontconfig" = {
+      source = ../configFiles/config/fontconfig;
+      recursive = true;
+    };
   };
 }
