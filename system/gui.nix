@@ -30,6 +30,10 @@ with lib; {
 
       services.desktopManager.plasma6.enable = true;
 
+      services.v2raya.enable = true;
+
+      hardware.bluetooth.enable = true;
+
       programs.wayfire = {
         enable = true;
         plugins = with pkgs.wayfirePlugins; [
@@ -61,6 +65,11 @@ with lib; {
         nerd-fonts.fira-code
         nerd-fonts.symbols-only
         twitter-color-emoji
+
+        wl-clipboard
+        wl-clipboard-x11
+        kitty
+        nvtopPackages.full
       ];
 
       home-manager.users.${cfg.username}.xresources.properties = {

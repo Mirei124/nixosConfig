@@ -12,10 +12,13 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.tmp.useTmpfs = true;
+
   networking.networkmanager = {
     enable = true;
     plugins = lib.mkForce [];
   };
+  networking.modemmanager.enable = false;
   networking.firewall.enable = false;
 
   time.timeZone = "Asia/Shanghai";
@@ -46,6 +49,7 @@ in {
   environment.shellAliases = {
     "vi" = "nvim";
     "nbs" = "sudo /etc/nixos/update-permission-and-format.sh; sudo nixos-rebuild switch --flake '/etc/nixos?submodules=1'";
+    "nhs" = "sudo /etc/nixos/update-permission-and-format.sh; nh os switch -a '/etc/nixos?submodules=1'";
     "ndb" = "nix repl -f '<nixpkgs>'";
     "npk" = "sudo -E nvim /etc/nixos/system/pkgs.nix";
   };

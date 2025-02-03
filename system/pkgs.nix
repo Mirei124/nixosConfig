@@ -14,6 +14,7 @@
       alejandra
       nix-search-cli
       nix-tree
+      nh
 
       neovim
       gnumake
@@ -36,6 +37,12 @@
       lf
       tldr
       tmux
+      light
+      file
+      shfmt
+      shellcheck
+      jq
+      nodePackages.prettier
     ]
     ++ (lib.optionals (config.networking.hostName == "wsl") [
       ## python
