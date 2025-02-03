@@ -60,6 +60,12 @@
                 ];
               };
             };
+            "82B6" = {
+              system = "x86_64-linux";
+              hostModule = {
+                imports = [./hosts/82B6];
+              };
+            };
           };
 
           homeConfigurations = {};
