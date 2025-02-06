@@ -3,7 +3,7 @@
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?rev=3a228057f5b619feb3186e986dbe76278d707b6e";
+    nixpkgs.url = "github:nixos/nixpkgs?rev=799ba5bffed04ced7067a91798353d360788b30d";
     # nixpkgs.url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -38,7 +38,7 @@
           systemModules = [
             {
               nix.settings.substituters = lib.mkBefore [
-                "https://mirrors.sustech.edu.cn/nix-channels/store"
+                "https://mirror.nju.edu.cn/nix-channels/store"
                 "https://mirror.sjtu.edu.cn/nix-channels/store"
                 "https://mirrors.ustc.edu.cn/nix-channels/store"
               ];

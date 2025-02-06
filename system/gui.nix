@@ -23,7 +23,7 @@ with lib; {
         sddm = {
           enable = true;
           enableHidpi = true;
-          theme = "catppuccin-mocha";
+          theme = "sddm-astronaut-theme";
           package = mkForce pkgs.kdePackages.sddm;
         };
       };
@@ -57,7 +57,8 @@ with lib; {
       };
 
       environment.systemPackages = with pkgs; [
-        catppuccin-sddm
+        (sddm-astronaut.override {embeddedTheme = "hyprland_kath";})
+        kdePackages.qtmultimedia
         firefox
 
         noto-fonts-cjk-sans
