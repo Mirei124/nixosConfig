@@ -15,6 +15,7 @@
       nix-search-cli
       nix-tree
       nh
+      nix-ld
 
       neovim
       gnumake
@@ -43,10 +44,13 @@
       shellcheck
       jq
       nodePackages.prettier
+      sshfs
     ]
     ++ (lib.optionals (config.networking.hostName == "wsl") [
       ## python
-      conda
-      jetbrains.pycharm-community-bin
+      # conda
+      # jetbrains.pycharm-community-bin
+      wl-clipboard
+      wl-clipboard-x11
     ]);
 }
