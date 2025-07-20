@@ -15,6 +15,7 @@
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
   hardware.nvidia = {
     nvidiaSettings = false;
+    open = true;
     powerManagement = {
       enable = true;
       finegrained = true;

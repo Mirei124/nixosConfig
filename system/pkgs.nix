@@ -24,7 +24,7 @@
       fzf
       python3
       python312Packages.pynvim
-      nodejs_23
+      nodejs_24
       unzip
       gnutar
       tree-sitter
@@ -38,19 +38,36 @@
       lf
       tldr
       tmux
-      light
       file
       shfmt
       shellcheck
       jq
       nodePackages.prettier
       sshfs
-    ]
-    ++ (lib.optionals (config.networking.hostName == "wsl") [
-      ## python
-      # conda
-      # jetbrains.pycharm-community-bin
       wl-clipboard
       wl-clipboard-x11
-    ]);
+    ]
+    ++ (lib.optionals (config.useGUI) [
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      nerd-fonts.fira-code
+      nerd-fonts.symbols-only
+      twitter-color-emoji
+
+      nvtopPackages.full
+      light
+      (pkgs.callPackage ../packages/wfhelper.nix {})
+
+      firefox
+      kitty
+      dconf-editor
+      telegram-desktop
+    ])
+    ++ (
+      lib.optionals (config.networking.hostName == "wsl") [
+        ## python
+        # conda
+        # jetbrains.pycharm-community-bin
+      ]
+    );
 }
