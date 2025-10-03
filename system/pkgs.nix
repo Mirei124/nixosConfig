@@ -4,6 +4,10 @@
   ...
 }: {
   programs.nix-ld.enable = true;
+  programs.firefox = {
+    enable = true;
+    languagePacks = ["en-US" "zh-CN"];
+  };
   environment.systemPackages = with pkgs;
     [
       zsh
@@ -46,6 +50,7 @@
       sshfs
       wl-clipboard
       wl-clipboard-x11
+      openssl
     ]
     ++ (lib.optionals (config.useGUI) [
       noto-fonts-cjk-sans
@@ -54,14 +59,16 @@
       nerd-fonts.symbols-only
       twitter-color-emoji
 
-      nvtopPackages.full
+      # nvtopPackages.full
       light
       (pkgs.callPackage ../packages/wfhelper.nix {})
 
-      firefox
       kitty
       dconf-editor
       telegram-desktop
+      pavucontrol
+      freerdp
+      moonlight-qt
     ])
     ++ (
       lib.optionals (config.networking.hostName == "wsl") [
