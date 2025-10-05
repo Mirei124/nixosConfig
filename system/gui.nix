@@ -48,7 +48,12 @@ with lib; {
       })
 
       {
-        services.v2raya.enable = true;
+        services.mihomo = {
+          enable = true;
+          tunMode = true;
+          configFile = "/etc/mihomo/config.yaml";
+        };
+
         services.udev.extraRules = ''
           ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils.outPath}/bin/chgrp video $sys$devpath/brightness", RUN+="${pkgs.coreutils.outPath}/bin/chmod g+w $sys$devpath/brightness"
         '';
