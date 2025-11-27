@@ -17,13 +17,13 @@ rustPlatform.buildRustPackage rec {
   };
 
   nativeBuildInputs = with pkgs; [pkg-config];
-  buildInputs = with pkgs; [atkmm dbus gdk-pixbuf glib gtk3 libayatana-appindicator-gtk3 pango];
+  buildInputs = with pkgs; [atkmm dbus gdk-pixbuf glib gtk3 libayatana-appindicator pango];
 
   cargoHash = "sha256-WeHdztnlaf0qfRAq3TXYAeeZHML+em85CGv+rxRbdaY=";
 
   postInstall = ''
     patchelf $out/bin/wfhelper --add-needed \
-      ${lib.getLib pkgs.libayatana-appindicator-gtk3}/lib/libayatana-appindicator3.so
+      ${lib.getLib pkgs.libayatana-appindicator}/lib/libayatana-appindicator3.so
   '';
 
   meta = {

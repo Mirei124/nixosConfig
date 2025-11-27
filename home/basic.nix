@@ -3,12 +3,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Connor";
-    userEmail = "connor@noreply.com";
-    aliases = {
-      "lg" = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit";
-    };
-    extraConfig = {
+    settings = {
+      aliases = {
+        "lg" = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      };
+      user.email = "connor@noreply.com";
+      user.name = "Connor";
       safe.directory = "/etc/nixos";
     };
   };

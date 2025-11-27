@@ -3,7 +3,7 @@
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?rev=7df7ff7d8e00218376575f0acdcc5d66741351ee";
+    nixpkgs.url = "github:nixos/nixpkgs?rev=5ae3b07d8d6527c42f17c876e404993199144b6a";
     # nixpkgs.url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
