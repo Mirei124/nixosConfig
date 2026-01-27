@@ -3,8 +3,8 @@
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?rev=5ae3b07d8d6527c42f17c876e404993199144b6a";
-    # nixpkgs.url = "https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz";
+    # nixpkgs.url = "github:nixos/nixpkgs?rev=5ae3b07d8d6527c42f17c876e404993199144b6a";
+    nixpkgs.url = "https://mirror.nju.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     lite-config.url = "github:yelite/lite-config";
@@ -14,6 +14,9 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-darwin.url = "github:lnl7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -38,7 +41,7 @@
           systemModules = [
             {
               nix.settings.substituters = lib.mkBefore [
-                "https://mirrors.osa.moe/nix-channels/store"
+                # "https://mirrors.osa.moe/nix-channels/store"
                 "https://mirror.nju.edu.cn/nix-channels/store"
                 "https://mirror.sjtu.edu.cn/nix-channels/store"
                 "https://mirrors.ustc.edu.cn/nix-channels/store"
@@ -70,6 +73,12 @@
               system = "x86_64-linux";
               hostModule = {
                 imports = [./hosts/82B6];
+              };
+            };
+            "connordeMacBook-Air" = {
+              system = "aarch64-darwin";
+              hostModule = {
+                imports = [./hosts/Q4NMY];
               };
             };
           };
