@@ -34,6 +34,8 @@
           nixpkgs = {
             config = {
               allowUnfree = true;
+              problems.handlers = {
+              };
             };
             overlays = [];
           };

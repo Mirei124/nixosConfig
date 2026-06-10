@@ -16,11 +16,10 @@
       qbittorrent-enhanced
       stats
       obsidian
-      utm
+      # utm
       miniserve
       mpv
       pnpm
-      nvtopPackages.apple
       lf
       tmux
       yt-dlp
@@ -30,6 +29,11 @@
       jujutsu
       typst
       prettier
+      nix-tree
+      tree-sitter
+      rsync
+
+      nvtopPackages.apple
     ]
     ++ (with pkgs.darwin; [
       lsusb
