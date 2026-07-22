@@ -83,6 +83,12 @@
                 imports = [./hosts/Q4NMY];
               };
             };
+            "M761R9JRQY" = {
+              system = "aarch64-darwin";
+              hostModule = {
+                imports = [./hosts/M761R];
+              };
+            };
           };
 
           homeConfigurations = {};

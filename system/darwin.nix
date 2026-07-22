@@ -52,7 +52,13 @@
       ]
       ++ (with pkgs.darwin; [
         lsusb
-      ]));
+      ]))
+    ++ lib.optionals (config.networking.hostName == "M761R9JRQY") [
+      alejandra
+      neovim
+      kitty
+      cmux
+    ];
 
   environment.shellAliases = {
     "nbs" = "sudo darwin-rebuild switch --flake /etc/nix-darwin";
