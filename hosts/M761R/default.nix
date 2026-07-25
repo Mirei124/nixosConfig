@@ -10,8 +10,8 @@
     bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection
   '';
 
-  # programs.zsh.enableGlobalCompInit = false;
-  # programs.zsh.enableBashCompletion = false;
+  programs.zsh.enableGlobalCompInit = false;
+  programs.zsh.enableBashCompletion = false;
 
   documentation.enable = false;
   system.tools.darwin-uninstaller.enable = false;

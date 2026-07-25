@@ -58,6 +58,7 @@
       neovim
       kitty
       cmux
+      maccy
     ];
 
   environment.shellAliases = {
@@ -65,14 +66,18 @@
     "npk" = "sudo -E nvim /etc/nix-darwin/system/darwin.nix";
   };
 
-  services.openssh = {
-    enable = true;
-    extraConfig = ''
-      PermitRootLogin no
-      PasswordAuthentication no
-      KbdInteractiveAuthentication no
-    '';
-  };
+  services.openssh = lib.mkMerge [
+    (lib.mkIf (config.networking.hostName != "M761R9JRQY") {
+      enable = true;
+    })
+    {
+      extraConfig = ''
+        PermitRootLogin no
+        PasswordAuthentication no
+        KbdInteractiveAuthentication no
+      '';
+    }
+  ];
 
   nix.gc = {
     automatic = true;
