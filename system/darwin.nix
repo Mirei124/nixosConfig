@@ -42,11 +42,13 @@
         imagemagick
         poppler-utils
         wget
-        battery-toolkit
+        # battery-toolkit
         drawio
         opencode
         maccy
         tealdeer
+        cc-switch
+        claude-code
 
         nvtopPackages.apple
       ]
