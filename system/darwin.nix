@@ -59,6 +59,13 @@
       kitty
       cmux
       maccy
+      tmux
+      ffmpeg
+      prettier
+      uv
+      tokei
+      coreutils
+      jujutsu
     ];
 
   environment.shellAliases = {
