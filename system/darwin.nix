@@ -88,6 +88,19 @@
     }
   ];
 
+  programs.tmux = {
+    enable = true;
+    extraConfig = ''
+      set -g mouse on
+      set -g history-limit 1000000
+      set -g mode-keys vi
+
+      # copy select text, and don't jump to end
+      # https://stackoverflow.com/questions/32374907/tmux-mouse-copy-mode-jumps-to-bottom
+      bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection
+    '';
+  };
+
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 5d";
