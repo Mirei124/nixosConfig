@@ -68,6 +68,11 @@
       tokei
       coreutils
       jujutsu
+      ripgrep
+      fd
+      yazi
+      tree-sitter
+      trash-cli
     ];
 
   environment.shellAliases = {
