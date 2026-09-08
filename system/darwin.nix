@@ -70,9 +70,10 @@
       jujutsu
       ripgrep
       fd
-      yazi
+      lf
       tree-sitter
       trash-cli
+      gnused
     ];
 
   environment.shellAliases = {
