@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  herdrFlake,
   ...
 }: {
   environment.systemPackages = with pkgs;
@@ -43,12 +44,19 @@
         poppler-utils
         wget
         # battery-toolkit
-        drawio
-        opencode
+        # drawio
+        # opencode
         maccy
         tealdeer
         cc-switch
-        claude-code
+        # claude-code
+        # cmux
+        ripgrep
+        fd
+        gh
+        # betterdisplay
+
+        herdrFlake.packages.aarch64-darwin.default
 
         nvtopPackages.apple
       ]

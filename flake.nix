@@ -17,6 +17,8 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    herdr.url = "github:herdrdev/herdr";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -41,6 +43,7 @@
           };
 
           systemModules = [
+            {_module.args.herdrFlake = inputs.herdr;}
             {
               nix.settings.substituters = lib.mkBefore [
                 # "https://mirrors.osa.moe/nix-channels/store"
