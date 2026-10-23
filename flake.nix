@@ -19,6 +19,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     herdr.url = "github:herdrdev/herdr";
+    herdr.inputs.nixpkgs.follows = "nixpkgs";
+
+    cc-switch-cli.url = "github:SaladDay/cc-switch-cli";
+    cc-switch-cli.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -43,7 +47,10 @@
           };
 
           systemModules = [
-            {_module.args.herdrFlake = inputs.herdr;}
+            {
+              _module.args.herdr-flake = inputs.herdr;
+              _module.args.cc-switch-cli-flake = inputs.cc-switch-cli;
+            }
             {
               nix.settings.substituters = lib.mkBefore [
                 # "https://mirrors.osa.moe/nix-channels/store"

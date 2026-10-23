@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "cc-switch-cli": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792665847,
+        "narHash": "sha256-xws/t6NKnIwK651uC/IzhGLW90/VZBJtaDX8QzVBFEs=",
+        "owner": "SaladDay",
+        "repo": "cc-switch-cli",
+        "rev": "a285cd7d02fe893a72e9b47340f3893908bcabb6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SaladDay",
+        "repo": "cc-switch-cli",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -36,7 +56,9 @@
     },
     "herdr": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -133,18 +155,14 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779911860,
-        "narHash": "sha256-ubcLAcKBDCZjhxw/kH5DL5GdBZQdzLqpkTe7HonvJVs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c0a89c379b4ac67c7b13b051ddbd4e0dbc9b0eaf",
-        "type": "github"
+        "lastModified": 315532800,
+        "narHash": "sha256-V0WmebqwEeAVZMqxfv7Dq7hpKkPPM19W50xQf3D1Kf4=",
+        "type": "tarball",
+        "url": "https://mirror.nju.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://mirror.nju.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
       }
     },
     "nixpkgs-lib": {
@@ -162,27 +180,16 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 315532800,
-        "narHash": "sha256-V0WmebqwEeAVZMqxfv7Dq7hpKkPPM19W50xQf3D1Kf4=",
-        "type": "tarball",
-        "url": "https://mirror.nju.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://mirror.nju.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz"
-      }
-    },
     "root": {
       "inputs": {
+        "cc-switch-cli": "cc-switch-cli",
         "flake-parts": "flake-parts",
         "herdr": "herdr",
         "home-manager": "home-manager",
         "lite-config": "lite-config",
         "nix-darwin": "nix-darwin",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {

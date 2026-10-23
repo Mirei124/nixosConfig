@@ -2,7 +2,8 @@
   config,
   lib,
   pkgs,
-  herdrFlake,
+  herdr-flake,
+  cc-switch-cli-flake,
   ...
 }: {
   environment.systemPackages = with pkgs;
@@ -48,7 +49,6 @@
         # opencode
         maccy
         tealdeer
-        cc-switch
         # claude-code
         # cmux
         ripgrep
@@ -56,7 +56,8 @@
         gh
         # betterdisplay
 
-        herdrFlake.packages.aarch64-darwin.default
+        herdr-flake.packages.aarch64-darwin.default
+        cc-switch-cli-flake.packages.aarch64-darwin.default
 
         nvtopPackages.apple
       ]
